@@ -24,10 +24,22 @@ def monstruoSlice(datos,nombre):
             print(monstruo.get("name"))
     print()
 
-def monstruosJuegos(datos):
+def listarJuegos(datos):
     listaJuegos = []
     for monstruo in datos.get("monsters"):
         for juegos in monstruo.get("games"):
             if juegos.get("game") not in listaJuegos:
                 listaJuegos.append(juegos.get("game"))
-    print(listaJuegos)
+    return listaJuegos
+
+def buscaJuegos(datos):
+    listaJuegos = listarJuegos(datos)
+    print("Juegos disponibles:")
+    for juego in listaJuegos:
+        print(juego)
+    buscJuego = input("Dime el juego a buscar: ")
+
+    for monstruo in datos.get("monsters"):
+        for juegos in monstruo.get("games"):
+            if juegos.get("game").lower() == buscJuego.lower():
+                print(monstruo.get("name"))

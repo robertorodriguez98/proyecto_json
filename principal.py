@@ -1,4 +1,4 @@
-from funciones import LeerLibreria,listarNombre,contarJuegos,monstruoSlice,monstruosJuegos
+from funciones import LeerLibreria,listarNombre,contarJuegos,monstruoSlice,buscaJuegos
 
 informacion = LeerLibreria()
 
@@ -22,5 +22,5 @@ while menu != 6:
         monstruo = input("Dime el inicio del nombre del monstruo: ")
         monstruoSlice(informacion,monstruo)
     if menu == 4:
-        monstruosJuegos(informacion)
+        buscaJuegos(informacion)
     menu = int(input(mostrar_menu))
