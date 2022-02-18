@@ -8,3 +8,8 @@ def LeerLibreria():
         return datos
     except:
         print("error al leer el fichero json")
+
+def listarNombre(datos):
+    for monstruo in datos.get("monsters"):
+        print("%s, tipo %s"%(monstruo.get("name"),monstruo.get("type")))
+    print()
