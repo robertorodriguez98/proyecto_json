@@ -1,4 +1,4 @@
-from funciones import LeerLibreria,listarNombre
+from funciones import LeerLibreria,listarNombre,contarJuegos
 
 informacion = LeerLibreria()
 
@@ -16,4 +16,6 @@ menu = int(input(mostrar_menu))
 while menu != 6:
     if menu == 1:
         listarNombre(informacion)
+    if menu == 2:
+        contarJuegos(informacion)
     menu = int(input(mostrar_menu))
