@@ -17,3 +17,10 @@ def listarNombre(datos):
 def contarJuegos(datos):
     for monstruo in datos.get("monsters"):
         print("%s aparece en %d juegos"%(monstruo.get("name"),len(monstruo.get("games"))))
+
+def monstruoSlice(datos,nombre):
+    for monstruo in datos.get("monsters"):
+        if monstruo.get("name").lower().startswith(nombre.lower()):
+            print(monstruo.get("name"))
+    print()
+
