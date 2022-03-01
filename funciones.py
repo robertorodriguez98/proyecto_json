@@ -32,16 +32,10 @@ def listarJuegos(datos):
                 listaJuegos.append(juegos.get("game"))
     return listaJuegos
 
-def buscaJuegos(datos):
-    listaJuegos = listarJuegos(datos)
-    print("Juegos disponibles:")
-    for juego in listaJuegos:
-        print(juego)
-    buscJuego = input("Dime el juego a buscar: ")
-
+def buscaJuegos(datos,buscar):
     for monstruo in datos.get("monsters"):
         for juegos in monstruo.get("games"):
-            if juegos.get("game").lower() == buscJuego.lower():
+            if juegos.get("game").lower() == buscar.lower():
                 print(monstruo.get("name"))
 
 def listarTipos(datos):
@@ -51,16 +45,10 @@ def listarTipos(datos):
             listaTipos.append(monstruo.get("type"))
     return listaTipos
 
-def buscarTipos(datos):
+def buscarTipos(datos,buscJuego): 
     listaTipos = listarTipos(datos)
-    listaJuegos = listarJuegos(datos)
-    
     dicTipos = d = dict.fromkeys(listaTipos, 0)
-
-    for juego in listaJuegos:
-        print(juego)
-    buscJuego = input("Dime el juego a buscar: ")
-
+    
     for monstruo in datos.get("monsters"):
         for juegos in monstruo.get("games"):
             if juegos.get("game").lower() == buscJuego.lower():
